@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AirSystem.Views.AboutPage"
+             xmlns:vm="clr-namespace:AirSystem.ViewModels"
+             Title="Інформація">
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView  VerticalOptions="FillAndExpand">
+                    <Image Source="icon_info.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical"  Padding="30,24,30,24" Spacing="10">
+                <Label Text="Тема роботи: Android-застосунок для моніторингу забруднення повітря" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" Padding="0,10,0,10" />
+                <Label Text="Застосунок призначено для інформування користувача про стан атмосферного повітря." FontSize="16" Padding="0,0,0,0"/>
+                <Label Text="Мобільний застосунок побудовано на платформі Xamarin.Forms" FontSize="Title"/>
+                <Label Text="Розробник: студент групи 412-ІПЗ Мальований Андрій Олександрович" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" Padding="0,10,0,10" />
+                <!-- Два рисунки поруч -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                    <Image Source="icon_fcit.png"  />
+                    <Image Source="icon_onua.png"  />
+                </StackLayout>
+
+                
+                <Button Margin="0,10,0,0" Text="На сайт ФКІТ"
+                        Command="{Binding OpenWebCommand}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
+    

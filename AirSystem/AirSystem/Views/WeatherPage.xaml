@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AirSystem.Views.WeatherPage"
+             xmlns:vm="clr-namespace:AirSystem.ViewModels"
+             Title="Погода">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="Primary">#007AFF</Color>
+            <Color x:Key="FrameBackground">#F5F5F5</Color>
+            <Color x:Key="ValueTextColor">#007700</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <!-- Інформація про країну та місто -->
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Frame BackgroundColor="{StaticResource FrameBackground}" CornerRadius="10" Padding="15" HasShadow="True" HorizontalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Label Text="Країна" FontSize="18" FontAttributes="Bold" />
+                        <Label Text="Україна" FontSize="16" TextColor="Green"/>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="{StaticResource FrameBackground}" CornerRadius="10" Padding="15" HasShadow="True" HorizontalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Label Text="Місто" FontSize="18" FontAttributes="Bold" />
+                        <Label Text="Одеса" FontSize="16" TextColor="Green" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <!-- Інформація про найближчу метеорологічну станцію -->
+            <Frame BackgroundColor="{StaticResource FrameBackground}" CornerRadius="10" Padding="15" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Найближча метеорологічна станція" FontSize="18" FontAttributes="Bold" />
+                    <Label Text="Французький бульвар, 89" FontSize="16" TextColor="Green"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Метеорологічні показники -->
+            <Frame BackgroundColor="{StaticResource FrameBackground}" CornerRadius="10" Padding="15" HasShadow="True">
+                <StackLayout Spacing="10">
+                    <Label Text="Метеорологічні показники" FontSize="18" FontAttributes="Bold" />
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <!-- Вологість -->
+                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                            <Image Source="icon_humidity.png" WidthRequest="24" HeightRequest="24" />
+                            <StackLayout>
+                                <Label Text="Вологість" FontSize="16" />
+                                <Label Text="{Binding Humidity}" FontSize="16" TextColor="{StaticResource ValueTextColor}" />
+                            </StackLayout>
+                        </StackLayout>
+                        <!-- Температура -->
+                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                            <Image Source="icon_temperature.png" WidthRequest="24" HeightRequest="24" />
+                            <StackLayout>
+                                <Label Text="Температура" FontSize="16" />
+                                <Label Text="{Binding Temperature}" FontSize="16" TextColor="{StaticResource ValueTextColor}" />
+                            </StackLayout>
+                        </StackLayout>
+                        <!-- Атмосферний тиск -->
+                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                            <Image Source="icon_pressure.png" WidthRequest="24" HeightRequest="24" />
+                            <StackLayout>
+                                <Label Text="Атмосферний тиск" FontSize="16" />
+                                <Label Text="{Binding Pressure}" FontSize="16" TextColor="{StaticResource ValueTextColor}" />
+                            </StackLayout>
+                        </StackLayout>
+                        <!-- Якість повітря -->
+                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                            <Image Source="icon_airquality.png" WidthRequest="24" HeightRequest="24" />
+                            <StackLayout>
+                                <Label Text="Якість повітря" FontSize="16" />
+                                <Label Text="{Binding AirQuality}" FontSize="16" TextColor="{StaticResource ValueTextColor}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+            </Frame>
+
+            <!-- Рекомендації для користувача -->
+            <Frame BackgroundColor="{StaticResource FrameBackground}" CornerRadius="10" Padding="15" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Рекомендації" FontSize="18" FontAttributes="Bold" />
+                    <Label Text="Якщо плануєте перебувати надворі, залишайтеся активними, щоб підтримувати тепло. Їжте теплу їжу та пийте гарячі напої (чай, супи), щоб підтримувати внутрішню температуру. Людям із серцево-судинними чи дихальними захворюваннями варто уникати надмірних фізичних навантажень на холоді, оскільки високий атмосферний тиск може впливати на самопочуття. Якщо плануєте залишитися вдома, підтримуйте комфортну температуру у приміщенні та провітрюйте кімнати для забезпечення свіжого повітря." FontSize="16" TextColor="Green"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

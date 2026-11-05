@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:AirSystem.Views"
+       Title="AirSystem"
+       x:Class="AirSystem.AppShell">
+
+    <!--
+        Загальна візуальна ієрархія додатка визначається тут разом із навігацією.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+
+            <!--
+            Стиль за замовчуванням для всіх елементів Flyout
+            https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#flyoutitem-and-menuitem-style-classes
+            -->
+            <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"></Setter>
+            </Style>
+            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, iOS=White}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!--
+            Користувацький стиль, який можна застосовувати до будь-якого елемента Flyout
+            -->
+            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <!-- 
+        Меню Flyout відображає вміст при відкритому боковому меню.
+        FlyoutDisplayOptions="AsMultipleItems" створює окремий пункт меню для кожного дочірнього елемента.
+        https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
+    -->
+    <FlyoutItem Title="Головна" Icon="icon_main.png">
+        <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Погода" Icon="icon_weather.png">
+        <ShellContent Route="WeatherPage" ContentTemplate="{DataTemplate local:WeatherPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Якість повітря" Icon="icon_airdata.png">
+        <ShellContent Route="AirQualityPage" ContentTemplate="{DataTemplate local:AirQualityPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Забруднення повітря" Icon="icon_danger.png">
+        <ShellContent Route="PollenPage" ContentTemplate="{DataTemplate local:PollenPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Карта" Icon="icon_map.png">
+        <ShellContent Route="MapPage" ContentTemplate="{DataTemplate local:MapPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Графіки" Icon="icon_graphic.png">
+        <ShellContent Route="GraphicsPage" ContentTemplate="{DataTemplate local:GraphicsPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Інформація" Icon="icon_info.png">
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Налаштування" Icon="icon_settings.png">
+        <ShellContent Route="SettingsPage" ContentTemplate="{DataTemplate local:SettingsPage}" />
+    </FlyoutItem>
+
+    <!-- Елемент меню для виходу -->
+    <MenuItem Text="Вихід" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked"  IconImageSource="icon_exit.png" >
+    </MenuItem>
+
+    <!--
+        TabBar дозволяє визначати вміст, який не буде відображатися в меню Flyout.
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/tabbar
+    -->
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    </TabBar>
+
+</Shell>

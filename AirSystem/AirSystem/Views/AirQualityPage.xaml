@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AirSystem"
+             x:Class="AirSystem.Views.AirQualityPage"
+             Title="Якість повітря">
+
+    <StackLayout Padding="20">
+        <Label Text="Якість повітря"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <Label x:Name="aqiLabel"
+               Text="AQI: Немає даних"
+               FontSize="18"
+               Margin="10,20,10,0" />
+
+        <Button Text="Оновити"
+                Clicked="OnRefreshClicked" />
+    </StackLayout>
+    
+</ContentPage>

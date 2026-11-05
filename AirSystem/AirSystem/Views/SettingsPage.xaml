@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AirSystem.Views.SettingsPage"
+             Title="Налаштування">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <!-- Пункт меню - Налаштування параметрів геолокації -->
+            <Frame BackgroundColor="White"
+        Padding="1"
+        Margin="10,10,10,0"
+        CornerRadius="10"
+        HorizontalOptions="FillAndExpand"
+        HasShadow="True">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <!-- Зображення -->
+                    <Image Source="icon_geolocation.png"
+                WidthRequest="40"
+                HeightRequest="40"
+                VerticalOptions="Center" />
+
+                    <!-- Текстова інформація -->
+                    <StackLayout VerticalOptions="CenterAndExpand" Spacing="5">
+                        <Label Text="Налаштування параметрів геолокації"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    FontAttributes="Bold" />
+                    </StackLayout>
+                    <Label Text=">"
+                TextColor="Black"
+                FontSize="Medium"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Пункт меню - Вибір типу даних про повітря -->
+            <Frame BackgroundColor="White"
+        Padding="1"
+        Margin="10,10,10,0"
+        CornerRadius="10"
+        HorizontalOptions="FillAndExpand"
+        HasShadow="True">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <!-- Зображення -->
+                    <Image Source="icon_airdata.png"
+                WidthRequest="40"
+                HeightRequest="40"
+                VerticalOptions="Center" />
+
+                    <!-- Текстова інформація -->
+                    <StackLayout VerticalOptions="CenterAndExpand" Spacing="5">
+                        <Label Text="Вибір типу даних про повітря"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    FontAttributes="Bold" />
+                    </StackLayout>
+                    <Label Text=">"
+                TextColor="Black"
+                FontSize="Medium"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Пункт меню - Налаштування карти -->
+            <Frame BackgroundColor="White"
+        Padding="1"
+        Margin="10,10,10,0"
+        CornerRadius="10"
+        HorizontalOptions="FillAndExpand"
+        HasShadow="True">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <!-- Зображення -->
+                    <Image Source="icon_mapsettings.png"
+                WidthRequest="40"
+                HeightRequest="40"
+                VerticalOptions="Center" />
+
+                    <!-- Текстова інформація -->
+                    <StackLayout VerticalOptions="CenterAndExpand" Spacing="5">
+                        <Label Text="Налаштування карти"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    FontAttributes="Bold" />
+                    </StackLayout>
+                    <Label Text=">"
+                TextColor="Black"
+                FontSize="Medium"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Пункт меню - Налаштування сповіщень користувачу -->
+            <Frame BackgroundColor="White"
+        Padding="1"
+        Margin="10,10,10,0"
+        CornerRadius="10"
+        HorizontalOptions="FillAndExpand"
+        HasShadow="True">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <!-- Зображення -->
+                    <Image Source="icon_notifications.png"
+                WidthRequest="40"
+                HeightRequest="40"
+                VerticalOptions="Center" />
+
+                    <!-- Текстова інформація -->
+                    <StackLayout VerticalOptions="CenterAndExpand" Spacing="5">
+                        <Label Text="Налаштування сповіщень користувачу"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    FontAttributes="Bold" />
+                    </StackLayout>
+                    <Label Text=">"
+                TextColor="Black"
+                FontSize="Medium"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Пункт меню - Вибір джерел геоданих -->
+            <Frame BackgroundColor="White"
+        Padding="1"
+        Margin="10,10,10,0"
+        CornerRadius="10"
+        HorizontalOptions="FillAndExpand"
+        HasShadow="True">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <!-- Зображення -->
+                    <Image Source="icon_geodatasources.png"
+                WidthRequest="40"
+                HeightRequest="40"
+                VerticalOptions="Center" />
+
+                    <!-- Текстова інформація -->
+                    <StackLayout VerticalOptions="CenterAndExpand" Spacing="5">
+                        <Label Text="Вибір джерел геоданих"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    FontAttributes="Bold" />
+                    </StackLayout>
+                    <Label Text=">"
+                TextColor="Black"
+                FontSize="Medium"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Пункт меню - Довідка та підтримка -->
+            <Frame BackgroundColor="White"
+        Padding="1"
+        Margin="10,10,10,0"
+        CornerRadius="10"
+        HorizontalOptions="FillAndExpand"
+        HasShadow="True">
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <!-- Зображення -->
+                    <Image Source="icon_support.png"
+                WidthRequest="40"
+                HeightRequest="40"
+                VerticalOptions="Center" />
+
+                    <!-- Текстова інформація -->
+                    <StackLayout VerticalOptions="CenterAndExpand" Spacing="5">
+                        <Label Text="Довідка та підтримка"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    FontAttributes="Bold" />
+                    </StackLayout>
+                    <Label Text=">"
+                TextColor="Black"
+                FontSize="Medium"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

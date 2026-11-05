@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AirSystem.Views"
+             x:Class="AirSystem.Views.MainPage"
+             Title="Головна">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <!-- Заголовок -->
+            <Label Text="Головна сторінка"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   TextColor="Black" />
+
+            <!-- Кнопка для отримання місцезнаходження -->
+            <Button Text="Отримати місцезнаходження"
+                    FontSize="18"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Padding="10"
+                    Clicked="OnGetLocationClicked" />
+
+            <!-- Повідомлення про стан -->
+            <Label x:Name="StatusMessage"
+                   Text=""
+                   FontSize="16"
+                   TextColor="Gray"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
